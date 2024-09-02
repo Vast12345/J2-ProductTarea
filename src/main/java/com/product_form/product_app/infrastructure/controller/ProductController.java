@@ -33,6 +33,7 @@ public class ProductController {
         return "form";
     }
 
+
     @PostMapping("/submitProduct")
     public String productForm(HttpServletRequest request) {
         int code = Integer.parseInt(request.getParameter("code"));
@@ -48,10 +49,11 @@ public class ProductController {
         return "form";
     }
 
-    @GetMapping("/product")
+    @GetMapping("/products")
     public String listProducts(ModelMap model) {
         List<Product> productList = new ArrayList<>();
         productList = listProductUseCase.execute();
+        System.out.println(productList + "    HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
         model.addAttribute("products", productList);
 
         return "productview";

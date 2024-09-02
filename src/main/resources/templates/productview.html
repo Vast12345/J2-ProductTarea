@@ -15,13 +15,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="Product: ${products}">
+            <tr th:each="product: ${products}">
                 <td th:text="${product.code}"></td>
                 <td th:text="${product.name}"></td>
                 <td th:text="${product.price}"></td>
             </tr>
         </tbody>
     </table>
-    <form action="/form" method="get"></form>
+    <form action="/form" method="get">
+        <input type="submit" value="Add">
+    </form>
 </body>
 </html>
